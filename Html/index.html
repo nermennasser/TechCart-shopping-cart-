@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCart Project</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/headerStyle.css">
+    <link rel="stylesheet" href="/css/index.css">
+
+</head>
+
+<body>
+
+    <!-- حاوية الهيدر -->
+    <div id="header-container"></div>
+    <script src="/js/header.js"></script>
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <h1 class="hero-title">DISCOVER YOUR NEXT TECH ESSENTIAL</h1>
+        <div class="search-box-wrapper">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search products by name...">
+        </div>
+    </section>
+
+    <!-- Store Section -->
+    <main class="store-container">
+        <!-- Category Pills -->
+        <div class="category-pills" id="categories">
+            <button class="pill-btn active" onclick="filterCategory('all')">
+                All Products
+            </button>
+            <button class="pill-btn" onclick="filterCategory('cameras')">
+                Cameras
+            </button>
+            <button class="pill-btn" onclick="filterCategory('watches')">
+                Watches
+            </button>
+            <button class="pill-btn" onclick="filterCategory('headphones')">
+                Headphones
+            </button>
+            <button class="pill-btn" onclick="filterCategory('laptops')">
+                Laptops
+            </button>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid" id="productGrid">
+            <!-- Dynamically Rendered via JS -->
+        </div>
+    </main>
+
+    <script src="/js/index.js"></script>
+
+
+
+
+
+</body>
+
+</html>

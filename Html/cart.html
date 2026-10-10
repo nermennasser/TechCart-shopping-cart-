@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TechCart - Shopping Cart</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/headerStyle.css">
+
+    <link rel="stylesheet" href="/css/cart.css">
+
+</head>
+
+<body>
+    <!-- مكان استدعاء الهيدر -->
+    <div id="header-container"></div>
+    <script src="/js/header.js"> </script>
+
+    <div class="cart-wrapper">
+        <h1 style="font-size: 1.5rem; margin-bottom: 0.5rem;">
+            Shopping Cart</h1>
+    </div>
+
+
+    <div class="cart-wrapper">
+
+        <!-- Item List ⟶ -->
+
+        <section class="cart-items-container" id="cartItemList">
+
+            <!-- !Items dynamically populated by JS ⟶ -->
+
+        </section>
+
+        <!-- Financial Breakdown ⟶ -->
+
+        <aside class="summary-card">
+            <h2 style="font-size: 1.25rem; margin-bottom: 1.5rem;">Order Summary</h2>
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="subtotal-val">$0.00></span>
+            </div>
+
+            <div class="summary-row">
+
+                <span>Estimated Tax 8% </span>
+                <span id="tax-val">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping</span>
+                <span>Free</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span id="total-val">$0.00</span>
+            </div>
+            <button class="btn-primary" style="margin-top: 1rem;" onclick="alert('Proceeding to Checkout!')">
+                Proceed to Checkout
+            </button>
+        </aside>
+    </div>
+    <script src="/js/cart.js"></script>
+</body>
+
+</html>

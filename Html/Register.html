@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechCart - Register</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+
+    <link rel="stylesheet" href="/css/register.css" />
+  </head>
+
+  <body>
+    <main class="auth-container">
+      <div class="auth-card-wide">
+        <div
+          class="auth-header"
+          style="text-align: center; margin-bottom: 2rem"
+        >
+          <h1 style="font-size: 1.75rem">Create an Account</h1>
+          <p style="color: var(--text-muted); font-size: 0.875rem">
+            Join TechCart for exclusive technology deals
+          </p>
+        </div>
+        <form
+          id="registerForm"
+          class="form-grid"
+          onsubmit="event.preventDefault()"
+        >
+          <div class="form-group">
+            <input
+              type="text"
+              id="firstName"
+              class="form-control"
+              placeholder="First Name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              id="lastName"
+              class="form-control"
+              placeholder="Last Name"
+              required
+            />
+          </div>
+          <div class="form-group full-width">
+            <input
+              type="email"
+              id="regEmail"
+              class="form-control"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+          <div class="form-group full-width">
+            <input
+              type="password"
+              id="regPassword"
+              class="form-control"
+              placeholder="Password"
+              required
+            />
+            <ul class="validation-hints">
+              <li class="validation-hint" id="lengthHint">
+                <span>Minimum 8 characters</span>
+              </li>
+              <li class="validation-hint" id="numberHint">
+                <span>Contains at least 1 number</span>
+              </li>
+            </ul>
+          </div>
+          <div class="form-group full-width">
+            <button type="submit" class="btn-primary">
+              Complete Registration
+            </button>
+          </div>
+        </form>
+        <div
+          style="
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+          "
+        >
+          Already registered?
+          <a
+            href="login.html"
+            style="color: var(--primary-accent); text-decoration: none"
+            >Sign In</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <script src="../js/register.js"></script>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCart - My Profile</title>
+    <!-- استدعاء ملفات الـ CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/headerStyle.css">
+    <link rel="stylesheet" href="../css/profile.css">
+
+</head>
+
+<body>
+    <!-- حاوية الهيدر الموحد -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main class="profile-container">
+        <h1 class="hero-title" style="text-align: left; margin-bottom: 1.5rem;">Account Settings</h1>
+
+        <div id="alertMsg" class="alert-success">Profile updated successfully!</div>
+
+        <!-- Profile Form Card -->
+        <div class="profile-card">
+            <div class="profile-header-info">
+                <img id="displayAvatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100"
+                    alt="Avatar" class="profile-avatar-large">
+                <div class="profile-user-details">
+                    <h2 id="displayName">User Name</h2>
+                    <p id="displayEmail">user@example.com</p>
+                </div>
+            </div>
+
+            <form id="profileForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="avatarUrl">Avatar Image URL</label>
+                    <input type="url" id="avatarUrl" class="form-control" placeholder="https://example.com/photo.jpg">
+                </div>
+
+                <div class="profile-actions">
+                    <button type="submit" class="btn-save">Save Changes</button>
+                    <button type="button" class="btn-logout" id="logoutProfileBtn">Logout</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- السكربتات -->
+    <script src="../js/header.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            loadUserData();
+
+            // حفظ التعديلات
+            document.getElementById("profileForm").addEventListener("submit", (e) => {
+                e.preventDefault();
+                saveUserData();
+            });
+
+            // تسجيل الخروج
+            document.getElementById("logoutProfileBtn").addEventListener("click", () => {
+                localStorage.removeItem("currentUser");
+                window.location.href = "login.html";
+            });
+        });
+
+        // جلب بيانات المستخدم وعرضها
+        function loadUserData() {
+            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+            // إذا لم يكن المستخدم مسجلاً، توجيهه لصفحة الدخول
+            if (!currentUser) {
+                window.location.href = "login.html";
+                return;
+            }
+
+            const name = currentUser.name || "User";
+            const email = currentUser.email || "user@example.com";
+            const avatar = currentUser.avatar || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100";
+
+            document.getElementById("displayName").innerText = name;
+            document.getElementById("displayEmail").innerText = email;
+            document.getElementById("displayAvatar").src = avatar;
+
+            document.getElementById("fullName").value = name;
+            document.getElementById("email").value = email;
+            document.getElementById("avatarUrl").value = currentUser.avatar || "";
+        }
+
+        // حفظ بيانات المستخدم في LocalStorage
+        function saveUserData() {
+            const name = document.getElementById("fullName").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const avatar = document.getElementById("avatarUrl").value.trim();
+
+            const currentUser = JSON.parse(localStorage.getItem("currentUser")) || {};
+
+            currentUser.name = name;
+            currentUser.email = email;
+            if (avatar) currentUser.avatar = avatar;
+
+            localStorage.setItem("currentUser", JSON.stringify(currentUser));
+
+            // تحديث العرض في الصفحة الهيدر
+            loadUserData();
+            if (typeof renderUserSection === "function") {
+                renderUserSection();
+            }
+
+            // إظهار تنبيه النجاح
+            const alertMsg = document.getElementById("alertMsg");
+            alertMsg.style.display = "block";
+            setTimeout(() => {
+                alertMsg.style.display = "none";
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>

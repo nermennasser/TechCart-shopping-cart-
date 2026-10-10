@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCart - Categories</title>
+    <!-- استدعاء ملفات الـ CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/headerStyle.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/categories.css">
+
+
+</head>
+
+<body>
+    <!-- حاوية الهيدر الموحد -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-banner" style="padding: 2rem 1.5rem 1rem;">
+        <h1 class="hero-title">Browse Categories</h1>
+    </section>
+
+    <!-- Main Content -->
+    <main class="store-container">
+        <div class="categories-page-layout">
+
+            <!-- Sidebar / قائمة الأقسام -->
+            <aside class="category-sidebar">
+                <h2 class="sidebar-title">Categories</h2>
+                <ul class="category-list" id="categorySidebarList">
+                    <li><button class="category-item-btn active" onclick="filterCategory('all', this)">All
+                            Categories</button></li>
+                    <li><button class="category-item-btn" onclick="filterCategory('cameras', this)">Cameras</button>
+                    </li>
+                    <li><button class="category-item-btn" onclick="filterCategory('watches', this)">Watches</button>
+                    </li>
+                    <li><button class="category-item-btn"
+                            onclick="filterCategory('headphones', this)">Headphones</button></li>
+                    <li><button class="category-item-btn" onclick="filterCategory('laptops', this)">Laptops</button>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Product Grid -->
+            <section>
+                <div class="product-grid" id="categoryProductGrid">
+                    <!-- يتم عرض المنتجات ديناميكياً -->
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- السكربتات -->
+    <script src="/js/header.js"></script>
+    <script src="/js/categories.js"></script>
+
+
+</body>
+
+</html>
