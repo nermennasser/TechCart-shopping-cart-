@@ -3,7 +3,7 @@ let chooseproducts = [];
 let cartState = JSON.parse(localStorage.getItem("mycart")) || [];
 async function fetchProducts() {
   try {
-    const response = await fetch("../data/products.json");
+    const response = await fetch("data/products.json");
     products = await response.json();
     getCartDetailedProducts();
     renderCart();

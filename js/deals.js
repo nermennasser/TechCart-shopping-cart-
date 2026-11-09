@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 // جلب المنتجات وتطبيق نسبة خصم عشوائية أو محددة
 async function fetchDeals() {
   try {
-    const response = await fetch("../data/products.json");
+    const response = await fetch("data/products.json");
     if (!response.ok) throw new Error("تعذر جلب البيانات");
 
     allProducts = await response.json();
