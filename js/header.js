@@ -8,6 +8,7 @@ async function loadHeader() {
 
     const htmlData = await response.text();
     headerContainer.innerHTML = htmlData;
+    console.log(htmlData);
 
     // 1. فحص وتسجيل حالة الدخول
     renderUserSection();
@@ -22,9 +23,10 @@ async function loadHeader() {
 // دالة فحص حالة المستخدم من localStorage
 function renderUserSection() {
   const userSection = document.getElementById("userSection");
+  console.log(userSection);
   if (!userSection) return;
 
-  // جلب بيانات المستخدم المكتوبة عند الـ Login
+  //   // جلب بيانات المستخدم المكتوبة عند الـ Login
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   console.log(currentUser);
 

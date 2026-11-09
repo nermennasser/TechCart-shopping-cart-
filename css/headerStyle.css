@@ -72,14 +72,18 @@ body {
 
 /* زر اللوجن للزائر */
 .login-btn {
-  background-color: #38bdf8;
-  color: #0f172a;
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: 16px;
   text-decoration: none;
   font-weight: bold;
+  border: none;
+  outline: none;
+  background-color: #38bdf8;
+  color: #ffffff;
 }
-
+.login-btn:hover {
+  color: #0f172a;
+}
 /* البروفايل والدروپ داون */
 .profile-dropdown-container {
   position: relative;
