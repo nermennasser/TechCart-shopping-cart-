@@ -53,7 +53,7 @@ function renderUserSection() {
   } else {
     // حالة: زائر غير مسجل
     userSection.innerHTML = `
-      <a href="login.html" class="login-btn">Login</a>
+      <a href="Login.html" class="login-btn">Login</a>
     `;
   }
 }
