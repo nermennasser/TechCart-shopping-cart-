@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function fetchProducts() {
   try {
-    const response = await fetch("../data/products.json"); // أو مسار json الخاص بك
+    const response = await fetch("data/products.json"); // أو مسار json الخاص بك
     if (!response.ok) throw new Error("تعذر جلب المنتجات");
 
     allProducts = await response.json();
